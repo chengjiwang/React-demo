@@ -1,0 +1,75 @@
+.panel-shadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+}
+.panel-white {
+  border: 1px solid #dddddd;
+}
+
+.post-heading {
+  height: 95px;
+  padding: 20px 15px;
+}
+.post-heading img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+.post-heading .title {
+  margin-bottom: 0;
+}
+.post-heading .title a {
+  color: black;
+}
+.post-heading .title a:hover {
+  color: #aaaaaa;
+}
+.post-heading h6 {
+  margin-top: 8px;
+  color: #999;
+}
+ 
+.post-description {
+  padding: 15px;
+}
+
+
+.post-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+
+.post-footer textarea {
+  margin: 10px 0 ;
+}
+.post-footer .comments-list {
+  padding: 0;
+  margin-top: 20px;
+  list-style-type: none;
+}
+.post-footer .comments-list li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;;
+}
+
+.post-footer .comments-list li img {
+  width: 35px;
+  height: 35px;
+}
+
+.post-footer .comments-list li .comment-body h4 {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline;
+  margin-top: 0;
+  margin-right: 10px;
+}
+.post-footer .comments-list li .comment-body h5 {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 0;
+  display: inline;
+}
+.post-footer .comments-list li .comment-body {
+  margin-left: 50px;
+}
