@@ -5,26 +5,34 @@ export default class MessageForm extends Component {
 		super(props);
 		this.state = {
 			name: '',
-			content: ''
+			message: ''
 		}
 	}
 	render() {
 		return (
-			<form>
-				<input type= "text" placeholder="Type your name"
+			<form className="post-footer">
+				<input 
+				type= "text" 
+				placeholder="Type your name"
 				value={this.state.name}
 				onChange = { (event) => {
-					console.log(event.target.value);
+					// console.log(event.target.value);
 					this.setState( {name: event.target.value})
 				}}/>				 
-				<textarea placeholder="Type in your message" rows="5" 
-				value={this.state.content}
+				<textarea 
+				placeholder="Type in your message" 
+				rows="5"  
+				className="form-control"
+				value={this.state.message}
 				onChange = { (event) => {
-					this.setState( {content: event.target.value})
+					this.setState( {message: event.target.value})
 				}}/>				
-				<button onClick = { (event) => {
+				<button 
+				className="btn btn-info"
+				onClick = { (event) => {
 					event.preventDefault();
-					console.log(this.state);
+					// console.log(this.state);
+					this.props.submit(this.state);
 				}}>Post New Message </button>
 
 
