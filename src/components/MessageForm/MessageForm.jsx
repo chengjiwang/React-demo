@@ -6,6 +6,7 @@ export default class MessageForm extends Component {
 		this.state = {
 			name: '',
 			message: ''
+			
 		}
 	}
 	render() {
@@ -32,10 +33,17 @@ export default class MessageForm extends Component {
 				onClick = { (event) => {
 					event.preventDefault();
 					// console.log(this.state);
+					// var name = this.state.name.trim();
+    	// 			var message = this.state.message.trim();
+    	// 			this.setState({id: id+1});
+					// if (!name || !message) {
+					// 	console.log('請輸入非空白');
+						
+				 //        return;			     
+				 //    }
 					this.props.submit(this.state);
+					this.setState({name: '',message: ''})
 				}}>Post New Message </button>
-
-
 			</form>
 		);
 	}

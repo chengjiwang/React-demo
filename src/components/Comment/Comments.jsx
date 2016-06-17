@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
 export default class Comments extends Component {
+    //  constructor(props){
+    //         super(props);
+    //         this.state = {
+    //             likeNum: 0        
+    //         }
+    // }
 	render() {
-        // var comment = this.props.comment;
-        // console.log(comment);
+       
 		return (
 			<section>
             <ul className="comments-list">
@@ -19,15 +24,33 @@ export default class Comments extends Component {
                         <p>{this.props.message}</p>
                     </div>
                     <div className="stats"> 
-                        <button  className="btn btn-default stat-item">
-                            <i className="fa fa-thumbs-up icon" ></i>
+                        <button  
+                        className="btn btn-default stat-item"
+                        onClick ={()=>{
+                            var num =this.props.likeNum + 1 ;
+                            this.props.like(num);
+                            console.log(num)
+                        }}
+                        >
+                            <i className="fa fa-thumbs-up icon" >{this.props.likeNum}</i>
                         </button>
                         <button className="btn btn-default stat-item">
                             <i className="fa fa-thumbs-down icon"  ></i>
                         </button>
                         <div  className="pull-right">                                
-                            <button  className="btn btn-primary">edit</button>
-                            <button  className="btn btn-danger">delete</button>
+                            <button  
+                            className="btn btn-primary"
+                            onClick = {()=>{
+                                var message = prompt("edit" ,this.message);
+                                this.props.edit(message);
+                            }}
+                            >edit</button>
+                            <button  
+                            className="btn btn-danger"
+                            onClick = {()=>{
+                                this.props.delete();
+                            }}
+                            >delete</button>
                         </div>
                     </div>
                 </li>
