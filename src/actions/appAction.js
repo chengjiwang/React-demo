@@ -27,3 +27,11 @@ export function likeNum(num,index) {
 		id:index
 	}
 }
+
+export function dislikeNum(num,index) {
+	return {
+		type: 'DISLIKE_NUM',
+		payload: num,
+		id:index
+	}
+}

@@ -5,11 +5,12 @@ import { createStore } from 'redux' ;
 import reducers from './reducers/index.js';
 import {Provider} from 'react-redux';
 
+
 var store = createStore(reducers);
 console.log(store.getState());
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App data= { [] }></App>
+		<App></App>
 	</Provider>
 	, document.getElementById('root'))

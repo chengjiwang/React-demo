@@ -1,4 +1,10 @@
-var initialState = [{name:"alivn",message:"hello",likeNum:0}];
+var initialState = [{
+    name: "alivn",
+    message: "hello",
+    likeNum: 0,
+    dislikeNum: 0 ,
+    time : "2016-06-21 03:50"
+}];
 
 export default function(state = initialState, action) {
     switch(action.type) {
@@ -10,10 +16,12 @@ export default function(state = initialState, action) {
         return [ ...state ];
     case 'EDIT_COMMENT':
         state[action.id].message = action.payload ;
-        // console.log(state[action.id].message)
         return [ ...state ];
     case 'LIKE_NUM':
         state[action.id].likeNum = action.payload ;
+        return [ ...state ];
+    case 'DISLIKE_NUM':
+        state[action.id].dislikeNum = action.payload ;
         return [ ...state ];
     default:
         return state;

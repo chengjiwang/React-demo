@@ -3,40 +3,41 @@ import { connect} from 'react-redux';
 import Post from './Post/Post.jsx';
 import MessageForm from './MessageForm/MessageForm.jsx';
 import Comment from './Comment/Comments.jsx';
-import {addComment , deleteComment,editComment ,likeNum} from '../actions/appAction.js' ;
+import {addComment , deleteComment,editComment ,likeNum,dislikeNum} from '../actions/appAction.js' ;
 
  class App extends Component {
   render() {
   	console.log(this.props);
-    var cardList = this.props.comment.map(function(item,index){
+    var commentList = this.props.comment.map(function(item,index){
             return <Comment 
             name = {item.name}
             message = {item.message}
             likeNum = {item.likeNum}
+            dislikeNum = {item.dislikeNum}
             delete = {()=> {
                 this.props.dispatch(deleteComment(index))
             }}
             edit = {(message)=>{
-                // console.log(message,index)
                 this.props.dispatch(editComment(message,index))
             }}
             like = {(num)=>{
                 this.props.dispatch(likeNum(num,index))
             }}
-
-             >
+            dislike = {(num)=>{
+                this.props.dispatch(dislikeNum(num,index))
+            }} >
             </Comment>
         },this)
     return (
     	<div className="container"> 		
-    		<Post />
+    		<Post/>
     		<MessageForm submit={(item) => {
     			this.props.dispatch(addComment(item))
-    		}} />
-            <div >
-                { cardList } 
+    		  }}
+            />
+            <div>
+                { commentList } 
             </div>
-    		{/*<Comment data={this.props.comment} />*/}
     	</div>  
     );
   }
@@ -44,6 +45,6 @@ import {addComment , deleteComment,editComment ,likeNum} from '../actions/appAct
 
 export default connect(function(state){
     return {
-        comment: state.comment  //state 是store.getState() 拿到的資料
+        comment: state.comment  
     };
 })(App)
