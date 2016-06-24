@@ -2,4 +2,10 @@
 
 使用 React 和 Redux 建立一個簡單CRUD功能的留言板。
 
-DEMO: http://chengjiwang.github.io/Redux-demo/
+### Usage
+
+```
+npm install
+npm start
+open http://localhost:3000
+```
