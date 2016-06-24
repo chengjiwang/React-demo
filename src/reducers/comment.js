@@ -1,9 +1,8 @@
 var initialState = [{
     name: "alivn",
-    message: "hello",
+    message: "good",
     likeNum: 0,
-    dislikeNum: 0 ,
-    time : "2016-06-21 03:50"
+    dislikeNum: 0 
 }];
 
 export default function(state = initialState, action) {

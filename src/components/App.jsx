@@ -29,7 +29,7 @@ import {addComment , deleteComment,editComment ,likeNum,dislikeNum} from '../act
             </Comment>
         },this)
     return (
-    	<div className="container"> 		
+        <div>    			
     		<Post/>
     		<MessageForm submit={(item) => {
     			this.props.dispatch(addComment(item))
@@ -37,8 +37,8 @@ import {addComment , deleteComment,editComment ,likeNum,dislikeNum} from '../act
             />
             <div>
                 { commentList } 
-            </div>
-    	</div>  
+            </div>      
+        </div> 
     );
   }
 }
